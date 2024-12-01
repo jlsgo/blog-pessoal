@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}Admin - Novo Post{% endblock %}
+
+{% block content %}
+<div class="admin-container">
+    <h2>Criar Novo Post</h2>
+    <form method="POST" class="post-form">
+        <div class="form-group">
+            <label for="title">Título</label>
+            <input type="text" id="title" name="title" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="category">Categoria</label>
+            <input type="text" id="category" name="category" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="content">Conteúdo (Markdown)</label>
+            <textarea id="content" name="content" rows="10" required></textarea>
+        </div>
+        
+        <button type="submit" class="btn-submit">Publicar</button>
+    </form>
+</div>
+
+<style>
+.admin-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--bg-secondary);
+    border-radius: 8px;
+}
+
+.post-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    color: var(--text-primary);
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.8rem;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: inherit;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 200px;
+}
+
+.btn-submit {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--accent-purple);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #7424c9;
+}
+</style>
+{% endblock %}
